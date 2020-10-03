@@ -103,16 +103,22 @@ export class KanjiClockCard extends LitElement {
   static get styles(): CSSResult {
     return css`
       .content {
-        padding: 1rem;
+        padding: 1.5rem;
         text-align: center;
+        font-family: 'Sarasa UI J', 'Noto Sans JP', Helvetica, Arial, sans-serif;
       }
       .time {
         font-size: 3.2rem;
         line-height: 1em;
-        font-weight: light;
+        font-weight: 400;
+        line-height: 1em;
+        font-weight: 400;
+        padding-bottom: 0.2em;
+        color: var(--primary-text-color);
       }
       .time span {
-        font-weight: lighter;
+        font-weight: 300;
+        color: var(--secondary-text-color);
       }
       .date {
         color: var(--primary-color);

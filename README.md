@@ -25,9 +25,13 @@ A simple clock widget using Japanese Kanji for time and date
 ## Installation with Hacs
 
 ```yaml
-- url: "lovelace-kanji-clock-card/kanji-clock-card.js"
+- url: /hacsfiles/lovelace-kanji-clock-card/kanji-clock-card.js
   type: module
 ```
+
+## Troubleshooting
+
+If it is displaying strangely, please be sure you have a font that can display Kanji. I set it to use 'Sarasa UI J', 'Noto Sans JP', Helvetica then Arial in that order. You can customize the font with the Card Mod 
 
 ## Credits
 
