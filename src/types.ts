@@ -1,14 +1,14 @@
-import { ActionConfig, LovelaceCardConfig } from 'custom-card-helpers';
+import { LovelaceCardConfig } from 'custom-card-helpers';
 
-// TODO Add your configuration elements here for type-checking
-export interface BoilerplateCardConfig extends LovelaceCardConfig {
+export interface KanjiClockCardConfig extends LovelaceCardConfig {
   type: string;
-  name?: string;
-  show_warning?: boolean;
-  show_error?: boolean;
-  test_gui?: boolean;
-  entity?: string;
-  tap_action?: ActionConfig;
-  hold_action?: ActionConfig;
-  double_tap_action?: ActionConfig;
+  use_24h?: boolean;
+  short_weekdays?: boolean;
+  kanji_numbers?: boolean;
+}
+
+declare global {
+  interface Window {
+    customCards: Array<object>;
+  }
 }

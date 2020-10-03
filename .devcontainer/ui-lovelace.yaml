@@ -3,7 +3,7 @@ resources:
     type: module
 views:
   - cards:
-      - type: custom:boilerplate-card
-        name: Boilerplate Card Development
-        entity: sun.sun
-        test_gui: true
+      - type: custom:kanji-clock-card
+        use_24h: false
+        short_weekdays: false
+        kanji_numbers: false
