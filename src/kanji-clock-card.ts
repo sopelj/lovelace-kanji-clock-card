@@ -66,7 +66,7 @@ export class KanjiClockCard extends LitElement {
     const year = this.numberToKanji(date.getFullYear());
     const month = this.numberToKanji(date.getMonth() + 1);
     let pm = '';
-    const weeksuffix = this._config.short_weekdays ? '曜日' : '';
+    const weeksuffix = this._config.short_weekdays !== false ? '' : '曜日';
 
     if (this._config.use_24h !== true) {
       if (hours > 12) {
