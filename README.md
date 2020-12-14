@@ -2,12 +2,10 @@
 
 [![GitHub Release](https://img.shields.io/github/release/sopelj/lovelace-kanji-clock-card.svg?style=for-the-badge)](https://github.com/sopelj/lovelace-kanji-clock-card/releases)
 [![License](https://img.shields.io/github/license/sopelj/lovelace-kanji-clock-card.svg?style=for-the-badge)](LICENSE.md)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 ![Project Maintenance](https://img.shields.io/maintenance/yes/2020.svg?style=for-the-badge)
 
 A simple clock widget using Japanese Kanji for time and date
-
-*Please ⭐️ this repo if you find it useful*
 
 ![Example](./examples/cards.png)
 
@@ -15,9 +13,9 @@ A simple clock widget using Japanese Kanji for time and date
 
 | Name              | Type    | Requirement  | Description                                 | Default       |
 | ----------------- | ------- | ------------ | ------------------------------------------- | ------------- |
-| type              | string  | **Required** | `custom:kanji-clock-card`                   |               |  
+| type              | string  | **Required** | `custom:kanji-clock-card`                   |               |
 | use_24h           | boolean | **Optional** | Use 24 hour clock                           | `false`       |
-| short_weekdays    | boolean | **Optional** | Abbreviate weekdays to single kanji         | `true`       |
+| short_weekdays    | boolean | **Optional** | Abbreviate weekdays to single kanji         | `true`        |
 | kanji_numbers     | boolean | **Optional** | Convert numbers to kanji                    | `false`       |
 
 ## Installation with Hacs
