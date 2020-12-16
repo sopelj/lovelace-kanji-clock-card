@@ -11,12 +11,13 @@ A simple clock widget using Japanese Kanji for time and date
 
 ## Options
 
-| Name              | Type    | Requirement  | Description                                 | Default       |
-| ----------------- | ------- | ------------ | ------------------------------------------- | ------------- |
-| type              | string  | **Required** | `custom:kanji-clock-card`                   |               |
-| use_24h           | boolean | **Optional** | Use 24 hour clock                           | `false`       |
-| short_weekdays    | boolean | **Optional** | Abbreviate weekdays to single kanji         | `true`        |
-| kanji_numbers     | boolean | **Optional** | Convert numbers to kanji                    | `false`       |
+| Name              | Type    | Requirement  | Description                                   | Default       |
+| ----------------- | ------- | ------------ | --------------------------------------------- | ------------- |
+| type              | string  | **Required** | `custom:kanji-clock-card`                     |               |
+| use_24h           | boolean | **Optional** | Use 24 hour clock                             | `false`       |
+| invert_date       | boolean | **optional** | Use d日m月Y年 instead of the standard Y年m月d日 | `false`       |
+| short_weekdays    | boolean | **Optional** | Abbreviate weekdays to single kanji           | `true`        |
+| kanji_numbers     | boolean | **Optional** | Convert numbers to kanji                      | `false`       |
 
 ## Installation with Hacs
 

@@ -75,7 +75,7 @@ export class KanjiClockCard extends LitElement {
       pm = hours >= 12 ? '午前' : '午後';
     }
 
-    let minutesText;
+    let minutesText: string;
     if (this._config.use_24h !== true && minutes === 0) {
       minutesText = '';
     } else if (minutes === 30) {
@@ -84,12 +84,15 @@ export class KanjiClockCard extends LitElement {
       minutesText = `${this.numberToKanji(minutes)}分`;
     }
 
+    const dateDisplay =
+      this._config.invert_date === true ? `${day}日${month}月${year}年` : `${year}年${month}月${day}日`;
+
     return html`
       <ha-card>
         <div class="content" id="content">
           <div class="time"><span>${pm}</span>${this.numberToKanji(hours)}時${minutesText}</div>
           <div class="date">
-            ${day}日${month}月${year}年 (${KANJI_WEEKDAYS[date.getDay()]}${weeksuffix})
+            ${dateDisplay} (${KANJI_WEEKDAYS[date.getDay()]}${weeksuffix})
           </div>
         </div>
       </ha-card>
