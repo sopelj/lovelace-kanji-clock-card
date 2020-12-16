@@ -14,7 +14,7 @@ jobs:
       # Build
       - name: Build the file
         run: |
-          cd $GITHUB_WORKSPACE
+          cd ${{ github.workspace }}
           npm install
           npm run build
 
@@ -24,7 +24,7 @@ jobs:
 
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${GITHUB_WORKSPACE}/dist/kanji-clock-card.js
+          file: ${{ github.workspace }}/dist/kanji-clock-card.js
           asset_name: kanji-clock-card.js
           tag: ${{ github.ref }}
           overwrite: true
