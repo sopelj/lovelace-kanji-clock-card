@@ -1,8 +1,19 @@
-import { LitElement, html, customElement, property, CSSResult, TemplateResult, css } from 'lit-element';
-import { HomeAssistant } from 'custom-card-helpers';
+import {
+  LitElement,
+  html,
+  customElement,
+  property,
+  CSSResult,
+  TemplateResult,
+  css,
+  internalProperty,
+} from 'lit-element';
+import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
 
 import { KanjiClockCardConfig } from './types';
 import { KANJI_NUMBERS, KANJI_WEEKDAYS, TENS } from './const';
+
+import './editor';
 
 (window as Window).customCards = (window as Window).customCards || [];
 (window as Window).customCards.push({
@@ -11,12 +22,27 @@ import { KANJI_NUMBERS, KANJI_WEEKDAYS, TENS } from './const';
   description: 'A simple clock widget using Japanese Kanji for time and date',
 });
 
+const isBoolean = (val?: boolean): boolean => val === false || val === true;
+
 @customElement('kanji-clock-card')
 export class KanjiClockCard extends LitElement {
+  public static async getConfigElement(): Promise<LovelaceCardEditor> {
+    return document.createElement('kanji-clock-card-editor');
+  }
+
+  public static getStubConfig(): object {
+    return {
+      use_24h: false,
+      invert_date: false,
+      short_weekdays: true,
+      kanji_numbers: false,
+    };
+  }
+
   private _handle = 0;
 
-  @property() public hass!: HomeAssistant;
-  @property() private _config!: KanjiClockCardConfig;
+  @property({ attribute: false }) public hass!: HomeAssistant;
+  @internalProperty() private config!: KanjiClockCardConfig;
 
   public connectedCallback(): void {
     super.connectedCallback();
@@ -28,14 +54,18 @@ export class KanjiClockCard extends LitElement {
   }
 
   public setConfig(config: KanjiClockCardConfig): void {
-    this._config = {
-      name: 'Kanji Clock',
+    this.config = {
       ...config,
+      name: 'Kanji Clock',
+      use_24h: isBoolean(config.use_24h) ? config.use_24h : false,
+      invert_date: isBoolean(config.invert_date) ? config.invert_date : false,
+      short_weekdays: isBoolean(config.short_weekdays) ? config.short_weekdays : true,
+      kanji_numbers: isBoolean(config.kanji_numbers) ? config.kanji_numbers : false,
     };
   }
 
   protected numberToKanji(number: number): string {
-    if (this._config.kanji_numbers !== true) {
+    if (this.config.kanji_numbers !== true) {
       return number.toString();
     }
 
@@ -66,9 +96,8 @@ export class KanjiClockCard extends LitElement {
     const year = this.numberToKanji(date.getFullYear());
     const month = this.numberToKanji(date.getMonth() + 1);
     let pm = '';
-    const weeksuffix = this._config.short_weekdays !== false ? '' : '曜日';
 
-    if (this._config.use_24h !== true) {
+    if (!this.config.use_24h) {
       if (hours > 12) {
         hours -= 12;
       }
@@ -76,7 +105,7 @@ export class KanjiClockCard extends LitElement {
     }
 
     let minutesText: string;
-    if (this._config.use_24h !== true && minutes === 0) {
+    if (!this.config.use_24h && minutes === 0) {
       minutesText = '';
     } else if (minutes === 30) {
       minutesText = '半';
@@ -84,16 +113,16 @@ export class KanjiClockCard extends LitElement {
       minutesText = `${this.numberToKanji(minutes)}分`;
     }
 
-    const dateDisplay =
-      this._config.invert_date === true ? `${day}日${month}月${year}年` : `${year}年${month}月${day}日`;
+    let dateDisplay = this.config.invert_date === true ? `${day}日${month}月${year}年` : `${year}年${month}月${day}日`;
+
+    const weekdayKanji = KANJI_WEEKDAYS[date.getDay()];
+    dateDisplay += ' ' + (this.config.short_weekdays ? `(${weekdayKanji})` : `${weekdayKanji}曜日`);
 
     return html`
       <ha-card>
         <div class="content" id="content">
           <div class="time"><span>${pm}</span>${this.numberToKanji(hours)}時${minutesText}</div>
-          <div class="date">
-            ${dateDisplay} (${KANJI_WEEKDAYS[date.getDay()]}${weeksuffix})
-          </div>
+          <div class="date">${dateDisplay}</div>
         </div>
       </ha-card>
     `;

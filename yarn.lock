@@ -537,10 +537,10 @@ cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-custom-card-helpers@^1.6.3:
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/custom-card-helpers/-/custom-card-helpers-1.6.3.tgz#4d15e0a40af592de041094a7c63caea18d4dcd22"
-  integrity sha512-LrVwIUrXrdwKe6KbixREMIdQmlmw1HicqCxbqvWs2Bcs8Iv8aYNrcT6JQEiB/DHS2PU3zT+gs9qy2lsMPDd/Qw==
+custom-card-helpers@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/custom-card-helpers/-/custom-card-helpers-1.6.6.tgz#66d9ad2531c66995e8e21834e67de40d5fc1d50a"
+  integrity sha512-knoZKI/1+DAqATT6FzxPVhUyMznwQ1hkUw7xZ5gdD9rrjsPsqiORycQkKyUdt/kra4IYfFpQygRFRGDY8oOX1Q==
   dependencies:
     fecha "^4.2.0"
     home-assistant-js-websocket "^5.1.0"
@@ -1005,11 +1005,6 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-home-assistant-js-websocket@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/home-assistant-js-websocket/-/home-assistant-js-websocket-4.4.0.tgz#676229112a2357b054ec26ed0f186940757bc826"
-  integrity sha512-B/7nDtlVv3Cz0PVteGjmpGI+Ksw+9Lf4VOM+dlMG1LErCH9uOJlLQV7vswx+7bzeGMuB9YeRDb64lqjoR0zpPg==
-
 home-assistant-js-websocket@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/home-assistant-js-websocket/-/home-assistant-js-websocket-5.1.0.tgz#052d2b6cd0f3fdfd3fabda36555e660351d7efe6"
@@ -1246,13 +1241,6 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lit-element@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.2.1.tgz#79c94d8cfdc2d73b245656e37991bd1e4811d96f"
-  integrity sha512-ipDcgQ1EpW6Va2Z6dWm79jYdimVepO5GL0eYkZrFvdr0OD/1N260Q9DH+K5HXHFrRoC7dOg+ZpED2XE0TgGdXw==
-  dependencies:
-    lit-html "^1.0.0"
-
 lit-element@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.3.1.tgz#73343b978fa1e73d60526c6bb6ad60f53a16c343"
@@ -1260,15 +1248,22 @@ lit-element@^2.3.1:
   dependencies:
     lit-html "^1.1.1"
 
-lit-html@^1.0.0, lit-html@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.1.2.tgz#2e3560a7075210243649c888ad738eaf0daa8374"
-  integrity sha512-FFlUMKHKi+qG1x1iHNZ1hrtc/zHmfYTyrSvs3/wBTvaNtpZjOZGWzU7efGYVpgp6KvWeKF6ql9/KsCq6Z/mEDA==
+lit-element@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.4.0.tgz#b22607a037a8fc08f5a80736dddf7f3f5d401452"
+  integrity sha512-pBGLglxyhq/Prk2H91nA0KByq/hx/wssJBQFiYqXhGDvEnY31PRGYf1RglVzyLeRysu0IHm2K0P196uLLWmwFg==
+  dependencies:
+    lit-html "^1.1.1"
 
 lit-html@^1.1.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.1.tgz#1fb933dc1e2ddc095f60b8086277d4fcd9d62cc8"
   integrity sha512-GSJHHXMGLZDzTRq59IUfL9FCdAlGfqNp/dEa7k7aBaaWD+JKaCjsAk9KYm2V12ItonVaYx2dprN66Zdm1AuBTQ==
+
+lit-html@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.3.0.tgz#c80f3cc5793a6dea6c07172be90a70ab20e56034"
+  integrity sha512-0Q1bwmaFH9O14vycPHw8C/IeHMk/uSDldVLIefu/kfbTBGIc44KGH6A8p1bDfxUfHdc8q6Ct7kQklWoHgr4t1Q==
 
 load-json-file@^2.0.0:
   version "2.0.0"

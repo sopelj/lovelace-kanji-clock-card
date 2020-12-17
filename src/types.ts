@@ -1,4 +1,4 @@
-import { LovelaceCardConfig } from 'custom-card-helpers';
+import { LovelaceCard, LovelaceCardConfig, LovelaceCardEditor } from 'custom-card-helpers';
 
 export interface KanjiClockCardConfig extends LovelaceCardConfig {
   type: string;
@@ -11,5 +11,9 @@ export interface KanjiClockCardConfig extends LovelaceCardConfig {
 declare global {
   interface Window {
     customCards: Array<object>;
+  }
+  interface HTMLElementTagNameMap {
+    'kanji-clock-card-editor': LovelaceCardEditor;
+    'hui-error-card': LovelaceCard;
   }
 }
