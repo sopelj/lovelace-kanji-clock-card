@@ -14,8 +14,6 @@ import { HomeAssistant, LovelaceCardEditor, fireEvent } from 'custom-card-helper
 
 import { KanjiClockCardConfig } from './types';
 
-const isBoolean = (val?: boolean): boolean => val === false || val === true;
-
 @customElement('kanji-clock-card-editor')
 export class KanjiClockCardEditor extends LitElement implements LovelaceCardEditor {
   @property({ attribute: false }) public hass?: HomeAssistant;
@@ -33,31 +31,19 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
   }
 
   get _use_24h(): boolean {
-    if (!this._config) {
-      return false;
-    }
-    return isBoolean(this._config.use_24h) ? this._config.use_24h == true : false;
+    return this._config?.use_24h || false;
   }
 
   get _invert_date(): boolean {
-    if (!this._config) {
-      return false;
-    }
-    return isBoolean(this._config.invert_date) ? this._config.invert_date == true : false;
+    return this._config?.invert_date || false;
   }
 
   get _short_weekdays(): boolean {
-    if (!this._config) {
-      return false;
-    }
-    return isBoolean(this._config.short_weekdays) ? this._config.short_weekdays == true : true;
+    return this._config?.short_weekdays || true;
   }
 
   get _kanji_numbers(): boolean {
-    if (!this._config) {
-      return false;
-    }
-    return isBoolean(this._config.kanji_numbers) ? this._config.kanji_numbers == true : false;
+    return this._config?.kanji_numbers || false;
   }
 
   protected render(): TemplateResult | void {
