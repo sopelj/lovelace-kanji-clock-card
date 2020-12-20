@@ -1,5 +1,6 @@
 {
     "name": "Kanji Clock Card",
     "render_readme": true,
-    "filename": "kanji-clock-card.js"
+    "filename": "kanji-clock-card.js",
+    "country": "JP"
 }
