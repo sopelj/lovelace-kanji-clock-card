@@ -2,14 +2,12 @@
 /* eslint-disable @typescript-eslint/camelcase */
 import {
   LitElement,
-  customElement,
-  property,
-  internalProperty,
   html,
   TemplateResult,
   css,
-  CSSResult,
-} from 'lit-element';
+  CSSResultGroup,
+} from 'lit';
+import {property, state, customElement} from 'lit/decorators.js';
 import { HomeAssistant, LovelaceCardEditor, fireEvent } from 'custom-card-helpers';
 
 import { KanjiClockCardConfig } from './types';
@@ -17,7 +15,7 @@ import { KanjiClockCardConfig } from './types';
 @customElement('kanji-clock-card-editor')
 export class KanjiClockCardEditor extends LitElement implements LovelaceCardEditor {
   @property({ attribute: false }) public hass?: HomeAssistant;
-  @internalProperty() private _config?: KanjiClockCardConfig;
+  @state() private _config?: KanjiClockCardConfig;
 
   public setConfig(config: KanjiClockCardConfig): void {
     this._config = config;
@@ -93,7 +91,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
     `;
   }
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
       .options {
         display: grid;

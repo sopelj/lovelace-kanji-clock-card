@@ -2,13 +2,11 @@
 import {
   LitElement,
   html,
-  customElement,
-  property,
-  CSSResult,
+  CSSResultGroup,
   TemplateResult,
-  css,
-  internalProperty,
-} from 'lit-element';
+  css
+} from 'lit';
+import {property, state, customElement} from 'lit/decorators.js';
 import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
 
 import { KanjiClockCardConfig } from './types';
@@ -43,7 +41,7 @@ export class KanjiClockCard extends LitElement {
   private _handle = 0;
 
   @property({ attribute: false }) public hass!: HomeAssistant;
-  @internalProperty() private config!: KanjiClockCardConfig;
+  @state() private config!: KanjiClockCardConfig;
 
   public connectedCallback(): void {
     super.connectedCallback();
@@ -133,7 +131,7 @@ export class KanjiClockCard extends LitElement {
     return 3;
   }
 
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
       .content {
         padding: 1.5rem;
