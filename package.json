@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.7.0",
-    "lit": "^2.0.0-rc.2"
+    "lit": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -33,7 +33,6 @@
     "@rollup/plugin-json": "^4.1.0",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
-    "serialize-javascript": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -48,6 +47,7 @@
     "rollup-plugin-terser": "^5.3.1",
     "rollup-plugin-typescript2": "^0.24.3",
     "rollup-plugin-uglify": "^6.0.4",
+    "serialize-javascript": "^3.1.0",
     "typescript": "^3.9.7"
   },
   "scripts": {
