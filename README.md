@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/release/sopelj/lovelace-kanji-clock-card.svg?style=for-the-badge)](https://github.com/sopelj/lovelace-kanji-clock-card/releases)
 [![License](https://img.shields.io/github/license/sopelj/lovelace-kanji-clock-card.svg?style=for-the-badge)](LICENSE.md)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
 ![Project Maintenance](https://img.shields.io/maintenance/yes/2022.svg?style=for-the-badge)
 
 A simple clock widget using Japanese Kanji for time and date
