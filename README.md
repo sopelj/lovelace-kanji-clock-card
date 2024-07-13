@@ -3,7 +3,7 @@
 [![GitHub Release](https://img.shields.io/github/release/sopelj/lovelace-kanji-clock-card.svg?style=for-the-badge)](https://github.com/sopelj/lovelace-kanji-clock-card/releases)
 [![License](https://img.shields.io/github/license/sopelj/lovelace-kanji-clock-card.svg?style=for-the-badge)](LICENSE.md)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
-![Project Maintenance](https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge)
+![Project Maintenance](https://img.shields.io/maintenance/yes/2024.svg?style=for-the-badge)
 
 A simple clock widget using Japanese Kanji for time and date
 
@@ -11,13 +11,13 @@ A simple clock widget using Japanese Kanji for time and date
 
 ## Options
 
-| Name              | Type    | Requirement  | Description                                   | Default       |
-| ----------------- | ------- | ------------ | --------------------------------------------- | ------------- |
-| type              | string  | **Required** | `custom:kanji-clock-card`                     |               |
-| use_24h           | boolean | **Optional** | Use 24 hour clock                             | `false`       |
-| invert_date       | boolean | **optional** | Use d日m月Y年 instead of the standard Y年m月d日 | `false`       |
-| short_weekdays    | boolean | **Optional** | Abbreviate weekdays to single kanji           | `true`        |
-| kanji_numbers     | boolean | **Optional** | Convert numbers to kanji                      | `false`       |
+| Name           | Type    | Requirement  | Description                               | Default |
+|----------------|---------|--------------|-------------------------------------------|---------|
+| type           | string  | **Required** | `custom:kanji-clock-card`                 |         |
+| use_24h        | boolean | **Optional** | Use 24 hour clock                         | `false` |
+| invert_date    | boolean | **optional** | Use d日m月Y年 instead of the standard Y年m月d日 | `false` |
+| short_weekdays | boolean | **Optional** | Abbreviate weekdays to single kanji       | `true`  |
+| kanji_numbers  | boolean | **Optional** | Convert numbers to kanji                  | `false` |
 
 ## Installation with Hacs
 
@@ -34,15 +34,12 @@ If it is displaying strangely, please be sure you have a font that can display K
 
 Clone the repo and run `yarn install` or `npm install`.
 
-You can then run `yarn run start` to run `rollup` watch. You can then add the development card by adding the following to your lovelace config. (Replacing IP_ADDRESS with the IP of the computer on which you're running the command) *You may need to temporarily allow loading of mixed resources if you are testing on a site with HTTPS*
+You can then run `yarn watch` and run `python -m http.server 8080` to serve the files. 
+You can then add the development card by adding the following to your lovelace config. (Replacing IP_ADDRESS with the IP of the computer on which you're running the command) *You may need to temporarily allow loading of mixed resources if you are testing on a site with HTTPS*
 
 ```yaml
-- url: http://IP_ADDRESS:5000/kanji-clock-card.js
+- url: http://IP_ADDRESS:8080/kanji-clock-card.js
   type: module
 ```
 
-You can then use `yarn run lint` and then `yarn run build`
-
-## Credits
-
-This was created using the [Boilerplate Card](https://github.com/custom-cards/boilerplate-card) by [@iantrich](https://www.github.com/iantrich)
+You can then use `yarn lint` and then `yarn build`

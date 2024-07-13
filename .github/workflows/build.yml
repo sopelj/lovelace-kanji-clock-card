@@ -13,8 +13,8 @@ jobs:
     name: Test build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Build
         run: |
-          npm install
-          npm run build
+          yarn install --frozen-lockfile
+          yarn build

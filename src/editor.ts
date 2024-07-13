@@ -1,18 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/camelcase */
-import {
-  LitElement,
-  html,
-  TemplateResult,
-  css,
-  CSSResultGroup,
-} from 'lit';
-import {property, state, customElement} from 'lit/decorators.js';
-import { HomeAssistant, LovelaceCardEditor, fireEvent } from 'custom-card-helpers';
+import { LitElement, html, TemplateResult, css, CSSResultGroup } from "lit";
+import { property, state } from "lit/decorators";
+import { HomeAssistant, LovelaceCardEditor, fireEvent } from "custom-card-helpers";
 
-import { KanjiClockCardConfig } from './types';
+import { KanjiClockCardConfig } from "./types";
 
-@customElement('kanji-clock-card-editor')
 export class KanjiClockCardEditor extends LitElement implements LovelaceCardEditor {
   @property({ attribute: false }) public hass?: HomeAssistant;
   @state() private _config?: KanjiClockCardConfig;
@@ -25,7 +17,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
     if (!this._config || !this.hass) {
       return;
     }
-    fireEvent(this, 'config-changed', { config: newConfig });
+    fireEvent(this, "config-changed", { config: newConfig });
   }
 
   get _use_24h(): boolean {
@@ -55,7 +47,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
           <div class="option">
             <ha-switch
               .checked=${this._use_24h}
-              .configValue="${'use_24h'}"
+              .configValue="${"use_24h"}"
               @change="${this._valueChanged}"
             ></ha-switch>
             <span class="label">Use 24 Clock</span>
@@ -63,7 +55,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
           <div class="option">
             <ha-switch
               .checked=${this._invert_date}
-              .configValue="${'invert_date'}"
+              .configValue="${"invert_date"}"
               @change="${this._valueChanged}"
             ></ha-switch>
             <span class="label">Invert date order</span>
@@ -72,16 +64,16 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
           <div class="option">
             <ha-switch
               .checked=${this._short_weekdays}
-              .configValue="${'short_weekdays'}"
+              .configValue="${"short_weekdays"}"
               @change="${this._valueChanged}"
             ></ha-switch>
-            <span class="label">Use short weekdateformat</span>
+            <span class="label">Use short weekday format</span>
             <span class="help">eg. (火) instead of 火曜日</span>
           </div>
           <div class="option">
             <ha-switch
               .checked=${this._kanji_numbers}
-              .configValue="${'kanji_numbers'}"
+              .configValue="${"kanji_numbers"}"
               @change="${this._valueChanged}"
             ></ha-switch>
             <span class="label">Show numbers as Kanji</span>
@@ -122,7 +114,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
       return;
     }
     if (target.configValue) {
-      if (target.value === '') {
+      if (target.value === "") {
         delete this._config[target.configValue];
       } else {
         this._config = {
@@ -131,6 +123,6 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
         };
       }
     }
-    fireEvent(this, 'config-changed', { config: this._config });
+    fireEvent(this, "config-changed", { config: this._config });
   }
 }

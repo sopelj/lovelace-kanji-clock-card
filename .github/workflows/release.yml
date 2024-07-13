@@ -9,19 +9,18 @@ jobs:
     name: Prepare release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       # Build
-      - name: Build the file
+      - name: Build the card
         run: |
           cd ${{ github.workspace }}
-          npm install
-          npm run build
+          yarn install --forzen-lockfile
+          yarn build
 
-      # Upload build file to the releas as an asset.
-      - name: Upload zip to release
-        uses: svenstaro/upload-release-action@v1-release
-
+      # Upload build file to the release as an asset.
+      - name: Upload built component
+        uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{ github.workspace }}/dist/kanji-clock-card.js

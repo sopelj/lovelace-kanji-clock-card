@@ -1,35 +1,18 @@
-/* eslint-disable @typescript-eslint/camelcase */
-import {
-  LitElement,
-  html,
-  CSSResultGroup,
-  TemplateResult,
-  css
-} from 'lit';
-import {property, state, customElement} from 'lit/decorators.js';
-import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
+import { LitElement, html, CSSResultGroup, TemplateResult, css } from "lit";
+import { property, state } from "lit/decorators";
+import { HomeAssistant, LovelaceCardEditor } from "custom-card-helpers";
 
-import { KanjiClockCardConfig } from './types';
-import { KANJI_NUMBERS, KANJI_WEEKDAYS, TENS } from './const';
-
-import './editor';
-
-(window as Window).customCards = (window as Window).customCards || [];
-(window as Window).customCards.push({
-  type: 'kanji-clock-card',
-  name: 'Kanji Clock Card',
-  description: 'A simple clock widget using Japanese Kanji for time and date',
-});
+import { KanjiClockCardConfig, KanjiClockCardConfigOptions } from "./types";
+import { KANJI_NUMBERS, KANJI_WEEKDAYS, TENS } from "./const";
 
 const isBoolean = (val?: boolean): boolean => val === false || val === true;
 
-@customElement('kanji-clock-card')
 export class KanjiClockCard extends LitElement {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
-    return document.createElement('kanji-clock-card-editor');
+    return document.createElement("kanji-clock-card-editor");
   }
 
-  public static getStubConfig(): object {
+  public static getStubConfig(): KanjiClockCardConfigOptions {
     return {
       use_24h: false,
       invert_date: false,
@@ -55,7 +38,7 @@ export class KanjiClockCard extends LitElement {
   public setConfig(config: KanjiClockCardConfig): void {
     this.config = {
       ...config,
-      name: 'Kanji Clock',
+      name: "Kanji Clock",
       use_24h: isBoolean(config.use_24h) ? config.use_24h : false,
       invert_date: isBoolean(config.invert_date) ? config.invert_date : false,
       short_weekdays: isBoolean(config.short_weekdays) ? config.short_weekdays : true,
@@ -68,7 +51,7 @@ export class KanjiClockCard extends LitElement {
       return number.toString();
     }
 
-    let output = '';
+    let output = "";
     const length = number.toString().length;
     for (let i = length - 1; i >= 0; i--) {
       const divisor = Math.pow(10, i);
@@ -94,20 +77,20 @@ export class KanjiClockCard extends LitElement {
     const day = this.numberToKanji(date.getDate());
     const year = this.numberToKanji(date.getFullYear());
     const month = this.numberToKanji(date.getMonth() + 1);
-    let pm = '';
+    let pm = "";
 
     if (!this.config.use_24h) {
       if (hours > 12) {
         hours -= 12;
       }
-      pm = hours >= 12 ? '午前' : '午後';
+      pm = hours >= 12 ? "午前" : "午後";
     }
 
     let minutesText: string;
     if (!this.config.use_24h && minutes === 0) {
-      minutesText = '';
+      minutesText = "";
     } else if (minutes === 30) {
-      minutesText = '半';
+      minutesText = "半";
     } else {
       minutesText = `${this.numberToKanji(minutes)}分`;
     }
@@ -115,7 +98,7 @@ export class KanjiClockCard extends LitElement {
     let dateDisplay = this.config.invert_date === true ? `${day}日${month}月${year}年` : `${year}年${month}月${day}日`;
 
     const weekdayKanji = KANJI_WEEKDAYS[date.getDay()];
-    dateDisplay += ' ' + (this.config.short_weekdays ? `(${weekdayKanji})` : `${weekdayKanji}曜日`);
+    dateDisplay += " " + (this.config.short_weekdays ? `(${weekdayKanji})` : `${weekdayKanji}曜日`);
 
     return html`
       <ha-card>
@@ -136,7 +119,7 @@ export class KanjiClockCard extends LitElement {
       .content {
         padding: 1.5rem;
         text-align: center;
-        font-family: 'Sarasa UI J', 'Noto Sans JP', Helvetica, Arial, sans-serif;
+        font-family: "Sarasa UI J", "Noto Sans JP", Helvetica, Arial, sans-serif;
       }
       .time {
         font-size: 3.2rem;
