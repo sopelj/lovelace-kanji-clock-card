@@ -36,7 +36,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
     return this._config?.kanji_numbers || false;
   }
 
-  protected render(): TemplateResult | void {
+  protected render(): TemplateResult {
     if (!this.hass) {
       return html``;
     }

@@ -70,7 +70,7 @@ export class KanjiClockCard extends LitElement {
     return output;
   }
 
-  protected render(): TemplateResult | void {
+  protected render(): TemplateResult {
     const date = new Date();
     let hours = date.getHours();
     const minutes = date.getMinutes();
