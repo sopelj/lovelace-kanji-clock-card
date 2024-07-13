@@ -1,9 +1,0 @@
-resources:
-  - url: http://127.0.0.1:5000/kanji-clock-card.js
-    type: module
-views:
-  - cards:
-      - type: custom:kanji-clock-card
-        use_24h: false
-        short_weekdays: false
-        kanji_numbers: false

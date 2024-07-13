@@ -1,6 +1,9 @@
+# Project
 /node_modules/
-/.rpt2_cache/
-package-lock.json
+.parcel-cache/
 yarn-error.log
 /dist
+
+# IDEs
 .idea
+.vscode
