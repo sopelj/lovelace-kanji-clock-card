@@ -1,4 +1,4 @@
-import { LitElement, html, CSSResultGroup, TemplateResult, css } from "lit";
+import { LitElement, html, TemplateResult, css } from "lit";
 import { property, state } from "lit/decorators";
 import { HomeAssistant, LovelaceCardEditor } from "custom-card-helpers";
 
@@ -110,34 +110,30 @@ export class KanjiClockCard extends LitElement {
     `;
   }
 
-  static get cardSize(): number {
-    return 3;
-  }
+  static readonly cardSize = 3;
 
-  static get styles(): CSSResultGroup {
-    return css`
-      .content {
-        padding: 1.5rem;
-        text-align: center;
-        font-family: "Sarasa UI J", "Noto Sans JP", Helvetica, Arial, sans-serif;
-      }
-      .time {
-        font-size: 3.2rem;
-        line-height: 1em;
-        font-weight: 400;
-        line-height: 1em;
-        font-weight: 400;
-        padding-bottom: 0.2em;
-        color: var(--primary-text-color);
-      }
-      .time span {
-        font-weight: 300;
-        color: var(--secondary-text-color);
-      }
-      .date {
-        color: var(--primary-color);
-        font-size: var(--paper-font-headline_-_font-size);
-      }
-    `;
-  }
+  static readonly styles = css`
+    .content {
+      padding: 1.5rem;
+      text-align: center;
+      font-family: "Sarasa UI J", "Noto Sans JP", Helvetica, Arial, sans-serif;
+    }
+    .time {
+      font-size: 3.2rem;
+      line-height: 1em;
+      font-weight: 400;
+      line-height: 1em;
+      font-weight: 400;
+      padding-bottom: 0.2em;
+      color: var(--primary-text-color);
+    }
+    .time span {
+      font-weight: 300;
+      color: var(--secondary-text-color);
+    }
+    .date {
+      color: var(--primary-color);
+      font-size: var(--paper-font-headline_-_font-size);
+    }
+  `;
 }

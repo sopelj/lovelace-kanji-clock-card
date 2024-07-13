@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { LitElement, html, TemplateResult, css, CSSResultGroup } from "lit";
+import { LitElement, html, TemplateResult, css } from "lit";
 import { property, state } from "lit/decorators";
 import { HomeAssistant, LovelaceCardEditor, fireEvent } from "custom-card-helpers";
 
@@ -83,27 +82,25 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
     `;
   }
 
-  static get styles(): CSSResultGroup {
-    return css`
-      .options {
-        display: grid;
-      }
+  static readonly styles = css`
+    .options {
+      display: grid;
+    }
 
-      .option {
-        display: flex;
-        margin: 1rem 0;
-        align-items: center;
-      }
+    .option {
+      display: flex;
+      margin: 1rem 0;
+      align-items: center;
+    }
 
-      .option .label {
-        margin: 0 1rem;
-      }
+    .option .label {
+      margin: 0 1rem;
+    }
 
-      .option .help {
-        color: var(--secondary-text-color);
-      }
-    `;
-  }
+    .option .help {
+      color: var(--secondary-text-color);
+    }
+  `;
 
   private _valueChanged(ev): void {
     if (!this._config || !this.hass) {
@@ -115,6 +112,7 @@ export class KanjiClockCardEditor extends LitElement implements LovelaceCardEdit
     }
     if (target.configValue) {
       if (target.value === "") {
+        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
         delete this._config[target.configValue];
       } else {
         this._config = {
