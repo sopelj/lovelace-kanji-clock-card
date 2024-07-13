@@ -13,6 +13,12 @@
   ],
   "module": "dist/kanji-clock-card.js",
   "source": "src/index.ts",
+  "targets": {
+    "module": {
+      "optimize": true,
+      "includeNodeModules": true
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sopelj/lovelace-kanji-clock-card.git"
