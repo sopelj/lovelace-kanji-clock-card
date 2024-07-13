@@ -1,8 +1,8 @@
-import { LitElement, html, TemplateResult, css } from "lit";
+import { LitElement, html, type TemplateResult, css } from "lit";
 import { property, state } from "lit/decorators";
-import { HomeAssistant, LovelaceCardEditor } from "custom-card-helpers";
+import { type HomeAssistant, LovelaceCardEditor } from "custom-card-helpers";
 
-import { KanjiClockCardConfig, KanjiClockCardConfigOptions } from "./types";
+import type { KanjiClockCardConfig, KanjiClockCardConfigOptions } from "./types";
 import { KANJI_NUMBERS, KANJI_WEEKDAYS, TENS } from "./const";
 
 const isBoolean = (val?: boolean): boolean => val === false || val === true;

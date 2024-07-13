@@ -34,11 +34,11 @@ If it is displaying strangely, please be sure you have a font that can display K
 
 Clone the repo and run `yarn install` or `npm install`.
 
-You can then run `yarn watch` and run `python -m http.server 8080` to serve the files.
+You can then run `yarn dev` to build and serve the files.
 You can then add the development card by adding the following to your lovelace config. (Replacing IP_ADDRESS with the IP of the computer on which you're running the command) *You may need to temporarily allow loading of mixed resources if you are testing on a site with HTTPS*
 
 ```yaml
-- url: http://IP_ADDRESS:8080/kanji-clock-card.js
+- url: http://localhost:5000/kanji-clock-card.js
   type: module
 ```
 

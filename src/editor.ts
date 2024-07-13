@@ -1,8 +1,8 @@
-import { LitElement, html, TemplateResult, css } from "lit";
+import { LitElement, html, type TemplateResult, css } from "lit";
 import { property, state } from "lit/decorators";
-import { HomeAssistant, LovelaceCardEditor, fireEvent } from "custom-card-helpers";
+import { type HomeAssistant, type LovelaceCardEditor, fireEvent } from "custom-card-helpers";
 
-import { KanjiClockCardConfig } from "./types";
+import type { KanjiClockCardConfig } from "./types";
 
 export class KanjiClockCardEditor extends LitElement implements LovelaceCardEditor {
   @property({ attribute: false }) public hass?: HomeAssistant;
