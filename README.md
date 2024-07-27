@@ -28,7 +28,13 @@ A simple clock widget using Japanese Kanji for time and date
 
 ## Troubleshooting
 
-If it is displaying strangely, please be sure you have a font that can display Kanji. I set it to use 'Sarasa UI J', 'Noto Sans JP', Helvetica then Arial in that order. You can customize the font (or any other style for that matter) with the [Card Mod](https://github.com/thomasloven/lovelace-card-mod) if you wish.
+### Font displayed incorrectly
+
+Please be sure you have a font that can display Kanji. I set it to use 'Sarasa UI J', 'Noto Sans JP', Helvetica then Arial in that order. You can customize the font (or any other style for that matter) with the [Card Mod](https://github.com/thomasloven/lovelace-card-mod) if you wish.
+
+### Time is incorrect on Firefox
+
+If your time is displaying incorrectly on Firefox, you may have fingerprinting disable, see [associated issue](https://github.com/sopelj/lovelace-kanji-clock-card/issues/15).
 
 ## Development
 
