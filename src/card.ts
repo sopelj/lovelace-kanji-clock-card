@@ -57,14 +57,12 @@ export class KanjiClockCard extends LitElement {
       const divisor = Math.pow(10, i);
       const num = number % divisor;
       const prefix = Math.floor(number / divisor);
-      if (prefix > 1 && prefix < 10) {
-        output += KANJI_NUMBERS[prefix];
+      const digit = prefix % 10
+      if (digit > 1 && digit < 10) {
+        output += KANJI_NUMBERS[digit];
       }
-      if (prefix > 0) {
+      if (digit > 0) {
         output += TENS[i];
-      }
-      if (num > 0 && num < 10) {
-        output += KANJI_NUMBERS[num];
       }
     }
     return output;
