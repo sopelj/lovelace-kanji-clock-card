@@ -10,7 +10,7 @@
     ],
     "noEmit": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   }
 }

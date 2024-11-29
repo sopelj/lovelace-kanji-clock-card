@@ -1,9 +1,10 @@
 import { LitElement, html, type TemplateResult, css } from "lit";
-import { property, state } from "lit/decorators";
 import { type HomeAssistant, LovelaceCardEditor } from "custom-card-helpers";
 
 import type { KanjiClockCardConfig, KanjiClockCardConfigOptions } from "./types";
-import { KANJI_NUMBERS, KANJI_WEEKDAYS, TENS } from "./const";
+import { KANJI_WEEKDAYS } from "./const";
+import { convertNumberToKanji } from "./utils";
+import { property, state } from "lit/decorators.js";
 
 const isBoolean = (val?: boolean): boolean => val === false || val === true;
 
@@ -50,22 +51,7 @@ export class KanjiClockCard extends LitElement {
     if (this.config.kanji_numbers !== true) {
       return number.toString();
     }
-
-    let output = "";
-    const length = number.toString().length;
-    for (let i = length - 1; i >= 0; i--) {
-      const divisor = Math.pow(10, i);
-      const num = number % divisor;
-      const prefix = Math.floor(number / divisor);
-      const digit = prefix % 10
-      if (digit > 1 && digit < 10) {
-        output += KANJI_NUMBERS[digit];
-      }
-      if (digit > 0) {
-        output += TENS[i];
-      }
-    }
-    return output;
+    return convertNumberToKanji(number);
   }
 
   protected render(): TemplateResult {
@@ -121,7 +107,6 @@ export class KanjiClockCard extends LitElement {
       line-height: 1em;
       font-weight: 400;
       line-height: 1em;
-      font-weight: 400;
       padding-bottom: 0.2em;
       color: var(--primary-text-color);
     }

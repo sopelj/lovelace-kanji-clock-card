@@ -1,5 +1,5 @@
 import { LitElement, html, type TemplateResult, css } from "lit";
-import { property, state } from "lit/decorators";
+import { property, state } from "lit/decorators.js";
 import { type HomeAssistant, type LovelaceCardEditor, fireEvent } from "custom-card-helpers";
 
 import type { KanjiClockCardConfig } from "./types";
