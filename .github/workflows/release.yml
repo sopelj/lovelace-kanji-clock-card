@@ -15,7 +15,7 @@ jobs:
       - name: Build the card
         run: |
           cd ${{ github.workspace }}
-          yarn install --forzen-lockfile
+          yarn install --frozen-lockfile
           yarn build
 
       # Upload build file to the release as an asset.

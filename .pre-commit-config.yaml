@@ -1,5 +1,5 @@
 default_language_version:
-    python: python3.10
+    python: python3.13
 repos:
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.5.5
@@ -22,7 +22,7 @@ repos:
         types: [ file ]
         args: [ "--fix" ]
         additional_dependencies:
-          - "@typescript-eslint/parser@^7.16.0"
-          - "eslint@^8.57.0"
-          - "eslint-config-prettier@^9.1.0"
+          - "@typescript-eslint/parser@^8.23.0"
+          - "eslint@^9.20.0"
+          - "eslint-config-prettier@^10.0.1"
           - "eslint-plugin-prettier@^5.1.3"
