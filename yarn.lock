@@ -427,10 +427,22 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
   integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
+"@types/node@^20.0.0":
+  version "20.19.21"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.19.21.tgz#6e5378e04993c40395473b13baf94a09875157b8"
+  integrity sha512-CsGG2P3I5y48RPMfprQGfy4JPRZ6csfC3ltBZSRItG3ngggmNY/qs2uZKp4p9VbrpqNNSMzUZNFZKzgOGnd/VA==
+  dependencies:
+    undici-types "~6.21.0"
+
 "@types/trusted-types@^2.0.2":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@types/trusted-types/-/trusted-types-2.0.7.tgz#baccb07a970b91707df3a3e8ba6896c57ead2d11"
   integrity sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==
+
+"@types/whatwg-mimetype@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/whatwg-mimetype/-/whatwg-mimetype-3.0.2.tgz#e5e06dcd3e92d4e622ef0129637707d66c28d6a4"
+  integrity sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==
 
 "@typescript-eslint/eslint-plugin@8.32.1":
   version "8.32.1"
@@ -996,12 +1008,13 @@ graphemer@^1.4.0:
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
-happy-dom@^17.0.0:
-  version "17.4.7"
-  resolved "https://registry.yarnpkg.com/happy-dom/-/happy-dom-17.4.7.tgz#d3a928792902086a747883f8d9753048395ad4ba"
-  integrity sha512-NZypxadhCiV5NT4A+Y86aQVVKQ05KDmueja3sz008uJfDRwz028wd0aTiJPwo4RQlvlz0fznkEEBBCHVNWc08g==
+happy-dom@^20.0.2:
+  version "20.0.2"
+  resolved "https://registry.yarnpkg.com/happy-dom/-/happy-dom-20.0.2.tgz#da676a1e3d0742aff8ba4789db90445842538808"
+  integrity sha512-pYOyu624+6HDbY+qkjILpQGnpvZOusItCk+rvF5/V+6NkcgTKnbOldpIy22tBnxoaLtlM9nXgoqAcW29/B7CIw==
   dependencies:
-    webidl-conversions "^7.0.0"
+    "@types/node" "^20.0.0"
+    "@types/whatwg-mimetype" "^3.0.2"
     whatwg-mimetype "^3.0.0"
 
 has-flag@^4.0.0:
@@ -1517,6 +1530,11 @@ typescript@^5.7.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
+undici-types@~6.21.0:
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
+  integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
+
 uri-js@^4.2.2:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/uri-js/-/uri-js-4.4.1.tgz#9b1a52595225859e55f669d928f88c6c57f2a77e"
@@ -1575,11 +1593,6 @@ vitest@^3.0.5:
     vite "^5.0.0 || ^6.0.0"
     vite-node "3.1.3"
     why-is-node-running "^2.3.0"
-
-webidl-conversions@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-7.0.0.tgz#256b4e1882be7debbf01d05f0aa2039778ea080a"
-  integrity sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==
 
 whatwg-mimetype@^3.0.0:
   version "3.0.0"
