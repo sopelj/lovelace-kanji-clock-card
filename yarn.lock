@@ -531,6 +531,13 @@ brace-expansion@^5.0.5:
   dependencies:
     balanced-match "^4.0.2"
 
+buffer-image-size@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/buffer-image-size/-/buffer-image-size-0.6.4.tgz#357e8173e951ced3b5a2785c695993aa29dbcac4"
+  integrity sha512-nEh+kZOPY1w+gcCMobZ6ETUp9WfibndnosbpwB1iJk/8Gt5ZF2bhS6+B6bPYz424KtwsR6Rflc3tCz1/ghX2dQ==
+  dependencies:
+    "@types/node" "*"
+
 chai@^6.2.2:
   version "6.2.2"
   resolved "https://registry.yarnpkg.com/chai/-/chai-6.2.2.tgz#ae41b52c9aca87734505362717f3255facda360e"
@@ -776,17 +783,18 @@ glob-parent@^6.0.2:
   dependencies:
     is-glob "^4.0.3"
 
-happy-dom@^20.8.9:
-  version "20.8.9"
-  resolved "https://registry.yarnpkg.com/happy-dom/-/happy-dom-20.8.9.tgz#aeacc9ab9aacada379bce0ba37b2f02dabbba286"
-  integrity sha512-Tz23LR9T9jOGVZm2x1EPdXqwA37G/owYMxRwU0E4miurAtFsPMQ1d2Jc2okUaSjZqAFz2oEn3FLXC5a0a+siyA==
+happy-dom@^21.0.4:
+  version "21.0.4"
+  resolved "https://registry.yarnpkg.com/happy-dom/-/happy-dom-21.0.4.tgz#3b9e4b23a6ef5f94f6db242857a99742dd14f943"
+  integrity sha512-tFm+GaLBgo6o0awHnvHaNoraVo27qJ+2tZEtZ+cIa08hXbeitrxAJajLI05hsUy/2/YTKcUjQYzHe5mCcraLBw==
   dependencies:
     "@types/node" ">=20.0.0"
     "@types/whatwg-mimetype" "^3.0.2"
     "@types/ws" "^8.18.1"
+    buffer-image-size "^0.6.4"
     entities "^7.0.1"
     whatwg-mimetype "^3.0.0"
-    ws "^8.18.3"
+    ws "^8.21.0"
 
 home-assistant-js-websocket@^9.6.0:
   version "9.6.0"
@@ -1290,10 +1298,10 @@ word-wrap@^1.2.5:
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.5.tgz#d2c45c6dd4fbce621a66f136cbe328afd0410b34"
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
-ws@^8.18.3:
-  version "8.21.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.21.1.tgz#045650cd4b1207809e7547146223c3814a9af586"
-  integrity sha512-+0NTnW77fFN/DjQi6k/Sq/Yvk4Sgajw7urW8V+asjXnRgDs9gyGkdb7EzgfhA4goXsRIZKE28fzIXBHEzhuiWw==
+ws@^8.21.0:
+  version "8.22.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.22.0.tgz#40f16e1d7588ac0575041be5c49b8eb261c28e73"
+  integrity sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
